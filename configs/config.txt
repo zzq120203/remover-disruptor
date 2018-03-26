@@ -1,0 +1,25 @@
+#send:1; receive:2
+serviceMode=2
+hostID=00
+fileMark=.ok
+zipMark=.zip
+
+#send
+sendDataPath=/mnt/disk1
+sendScript=/home/remover/service/tools/sendScp.sh
+touchOK=/home/remover/service/tools/touchOK.sh
+mkdirScript=/home/remover/service/tools/mkdirs.sh
+czipThreadNumber=8
+minHour=10
+
+#receive
+receiveDataPath=/home/remover/service/testdir
+loongStorePath=/loongstore/532jcyj
+hadoopPath=/hive/test/tmp/msg_db/tmp_target_table
+dczipThreadNumber=8
+toHadoop=false
+
+#HDFS
+hdfsConf={"fs.defaultFS":"hdfs://mycluster","dfs.nameservices":"mycluster","dfs.ha.namenodes.mycluster":"nn1,nn2",\
+"dfs.namenode.rpc-address.mycluster.nn1":"10.136.140.124:8020","dfs.namenode.rpc-address.mycluster.nn2":"10.136.140.129:8020",\
+"dfs.client.failover.proxy.provider.mycluster":"org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"}
